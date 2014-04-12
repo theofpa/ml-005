@@ -81,8 +81,27 @@ J=J+regularization;
 
 % -------------------------------------------------------------
 
-% =========================================================================
 
+
+for t=1:m
+    a1=[1 ; X(t,:)'];
+    z2=Theta1*a1;
+    a2=[1; sigmoid(z2)];
+    z3=Theta2*a2;
+    a3=sigmoid(z3);
+    d3=a3-newy(t,:)';
+    d2=(Theta2'*d3).*sigmoidGradient([1; z2]);
+    d2=d2(2:end);
+    Theta1_grad=Theta1_grad+d2*a1';
+    Theta2_grad=Theta2_grad+d3*a2';
+end
+Theta1_grad=Theta1_grad/m;
+Theta2_grad=Theta2_grad/m;
+% =========================================================================
+reg1=[zeros(size(Theta1,1),1) ( (lambda/m).*Theta1(:,2:size(Theta1,2)) )];
+Theta1_grad=Theta1_grad+ reg1;
+reg2=[zeros(size(Theta2,1),1) ( (lambda/m).*Theta2(:,2:size(Theta2,2)) )];
+Theta2_grad=Theta2_grad+ reg2;
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
