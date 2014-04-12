@@ -75,6 +75,10 @@ newy=newy';
 
 J=((1/m)*sum(sum(-newy.*log(a3)-((1-newy).*log(1-a3)))));
 
+regularization=((lambda/(2*m))*(sum(sum(Theta1(:,2:size(Theta1,2)).^2))+sum(sum(Theta2(:,2:size(Theta2,2)).^2))));
+
+J=J+regularization;
+
 % -------------------------------------------------------------
 
 % =========================================================================
