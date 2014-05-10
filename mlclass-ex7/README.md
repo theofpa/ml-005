@@ -1,1 +1,1 @@
-![theofpa_compressed]](theofpa_compressed.jpg) 
+![theofpa_compressed](theofpa_compressed.jpg) 
