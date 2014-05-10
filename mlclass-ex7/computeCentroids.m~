@@ -27,8 +27,7 @@ centroids = zeros(K, n);
 %
 
 for i=1:K
-    ck=find(idx==i);
-    centroids(i,:)=(1/length(ck))*sum(X(ck,:));
+    mean=1/i
 end
 
 % =============================================================
