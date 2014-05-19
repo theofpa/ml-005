@@ -94,3 +94,19 @@ Feature learning
 Low rank matrix factorization
 
 Mean normalization
+
+
+Online Learning
+===============
+
+y=1 (use service)
+y=0 (not use service)
+
+p(y=1|x;theta)
+
+Repeat forever{
+	Get (x,y) corresponding to user
+	Update Theta using (x,y)
+	Theta:=Theta-a(h(x)-y)*x (j=0,..,n)
+}
+
