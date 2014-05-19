@@ -110,3 +110,7 @@ Repeat forever{
 	Theta:=Theta-a(h(x)-y)*x (j=0,..,n)
 }
 
+Map-reduce and data parallelism
+===============================
+
+Split the training set calculation on multiple computers or cores. The sum the results and divide by m.
