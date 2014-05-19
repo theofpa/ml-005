@@ -114,3 +114,13 @@ Map-reduce and data parallelism
 ===============================
 
 Split the training set calculation on multiple computers or cores. The sum the results and divide by m.
+
+Artificial data synthesis
+=========================
+
+Use only when we have a low bias classifier.
+
+* Create new data from scratch (ex use computer fonts with random background for the photo OCR case)
+* Use examples that we currently have and create additional data to amplify the training set (ex artificial distrortions of characters, background noise in audio)
+* Collect/label data by yourself
+* Crowd sourcing (ex. amazon mechanical turk)
